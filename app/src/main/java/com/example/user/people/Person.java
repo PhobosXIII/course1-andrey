@@ -9,14 +9,16 @@ public class Person {
 
     @PrimaryKey(autoGenerate = true)
     private long id;
+    private String name;
 
-    public Person() {
-        this(0);
+    public Person(String name) {
+        this(0, name);
     }
 
     @Ignore
-    public Person(long id) {
+    public Person(long id, String name) {
         this.id = id;
+        this.name = name;
     }
 
     public long getId() {
@@ -25,5 +27,13 @@ public class Person {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
